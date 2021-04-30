@@ -2,20 +2,22 @@ body {
   margin: 0;
 }
 
+.content-data {
+  color:#F6F1D1;
+}
+
 .app {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: #0B2027;
 }
 
 .todo-list {
+  justify-content: center;
   background-color: #0B2027;
   font-family: "Space Mono", monospace;
   padding: 1rem;
-  min-width: 400px;
-  min-height: 300px;
 }
 
 .title {
@@ -56,24 +58,16 @@ body {
   background: rgba(246, 241, 209, 0.1);
 }
 
-body {
-  margin: 0;
-}
-
 .app {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
 }
 
 .todo-list {
   background-color: #0B2027;
   font-family: "Space Mono", monospace;
   padding: 1rem;
-  min-width: 400px;
-  min-height: 300px;
 }
 
 .title {
@@ -125,12 +119,16 @@ body {
 }
 
 .check-button, .delete-button {
-  background-color: #F6F1D1;
+  background-color: #fff6c6;
   border: none;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   outline: none;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
+  margin: 0 20px;
+  padding: 10px;
+  font-family: "Space Mono", monospace;
+  font-size: inherit;
 }
 
 .task.done .check-button {
@@ -152,11 +150,14 @@ body {
 }
 
 .content {
+  display: flex;
+  align-items: center;
   margin: 0;
+  text-align: center;
+  
 }
 
 .task.done .content {
   text-decoration: line-through;
 }
 
-/*# sourceMappingURL=style.css.map */
