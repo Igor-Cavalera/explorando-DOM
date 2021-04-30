@@ -17,12 +17,14 @@ export const handleNovoItem = (evento) => {
 
     //Lembrete desfazer esse "moment"
     const data = moment(calendario.value);
-
+    const horario = data.format('HH:mm');
     const dataFormatada = data.format('DD/MM/YY');
-
+    const concluida = false;
     const dados = {
         valor,
-        dataFormatada
+        dataFormatada,
+        horario,
+        concluida
     }
 
     const tarefasAtualizadas = [...tarefas, dados];
@@ -47,21 +49,26 @@ export const handleNovoItem = (evento) => {
 
 }
 
-export const Tarefa = ({valor, dataFormatada}) => {
+export const Tarefa = ({valor, horario, concluida}, id) => {
 //preventDefault() - evita que "recarregue a pagina quando clicar"
 //ele anula o comportamento padrão de um evento
 //evento.preventDefault();
 
     const tarefa = document.createElement('li');
-    //Classe de css não POO
-    tarefa.classList.add('task');
+    
+    const conteudo = `<p class="content">${horario} * ${valor}</p>`;
 
-    const conteudo = `<p class="content">${dataFormatada} * ${valor}</p>`;
+    if (concluida) {
+        //Classe de css não POO
+        tarefa.classList.add('done');
+    }
+
+    tarefa.classList.add('task');
 
     tarefa.innerHTML = conteudo;
 
-    tarefa.appendChild(BotaoConclui());
-    tarefa.appendChild(BotaoDeleta());
+    tarefa.appendChild(BotaoConclui(carregaTarefa, id));
+    tarefa.appendChild(BotaoDeleta(carregaTarefa, id));
 
     return tarefa;
 
