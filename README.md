@@ -1,6 +1,6 @@
-<h1>Manipulando o DOM com JavaScript</h1>
+<h1> Projeto Ceep </h1>
 
-<h2> Projeto Ceep </h2>
+<h2> Manipulando o DOM com JavaScript </h2>
 <p> Inclui adicionar tarefas como um lembrete, incluindo horário e guardando as informações com o localStorage</p>
 <h3> Interface </h3>
 
